@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
-
+"""
+Module for handling Personal Data
+"""
+from typing import List
 import re
+import logging
+from os import environ
+import mysql.connector
 
-def filter_datum(fields, redaction, message, separator):
-    pattern = '|'.join(f'(?<={field}{separator})([^;{separator}]*)' for field in fields)
-    return re.sub(pattern, redaction, message)
+
+PII_FIELDS = ("name", "email", "phone", "ssn", "password")
+
 
 def filter_datum(fields: List[str], redaction: str,
                  message: str, separator: str) -> str:
