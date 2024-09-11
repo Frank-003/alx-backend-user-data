@@ -13,6 +13,3 @@ class User(Base):
     session_id = Column(String(255), nullable=True)
     reset_token = Column(String(255), nullable=True)
 
-    def __repr__(self):
-        return f"<User(id={self.id}, email={self.email})>"
-
