@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
+"""
+Create a SQLAlchemy model named `User`
+for database table named `users`
+"""
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+ """ SQLAlchemy model named User
+    for database table named users
+    """
 
 class User(Base):
     __tablename__ = 'users'
